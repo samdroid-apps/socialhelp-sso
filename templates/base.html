@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ _("Social Help Auth") }}</title>
+    <!-- Sorry -->
+    <style>
+body {
+    font: 1em sans-serif;
+    color: #282828;
+    background-color: white;
+    margin: 0;
+}
+
+body > p,
+form {
+    padding: 1em;
+    margin-bottom: 0.5em;
+}
+
+hr {
+    border: 1px solid #A6A6A6;
+}
+
+.flashes-bg {
+    background-color: #282828;
+    padding: 1em;
+}
+
+.flashes {
+    border: 2px solid #A6A6A6;
+    background-color: #FFD732;
+    padding: 0.5em;
+
+    font-weight: bold;
+    list-style: none;
+}
+
+h1 {
+    padding: 0.5em;
+    color: white;
+    background-color: #282828;
+    margin: 0;
+}
+
+.outline
+    </style>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flashes-bg"><ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul></div>
+        {% endif %}
+    {% endwith %}
+
+    {% block body %}{% endblock %}
+</body>
+</html>
+

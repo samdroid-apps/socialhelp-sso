@@ -1,0 +1,7 @@
+passlib
+dataset
+Flask
+itsdangerous
+
+git+https://github.com/tindie/pydiscourse
+requests

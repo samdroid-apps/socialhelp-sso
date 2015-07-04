@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>{{ _("Log In") }}</h1>
+<form action="login" method="POST">
+    <p>{{ _("Return to your account") }}</p>
+    <input type="text" placeholder="{{ _("Username or email") }}" name="id"/>
+    <input type="password" placeholder="{{ _("Password") }}" name="password"/>
+
+    <input type="hidden" name="nonce" value="{{ nonce }}"/>
+    <button type="submit">{{ _("Log In!") }}</button>
+</form>
+
+<h1>{{ _("Sign Up") }}</h1>
+<form action="signup" method="POST">
+    <p>{{ _("Create an account to post on Social Help") }}</p>
+        <input type="text" placeholder="{{ _("Username") }}" name="name"/>
+        <p>{{ _("Do not use your real name if you are under the age of 13") }}</p>
+    <hr/>
+        <input type="password" placeholder="{{ _("Password") }}"
+               name="password"/>
+        <p>{{ _("Any charecter (including spaces) are allowed") }}</p>
+        <p>{{ _("If you can not give your email, write down your password as there is no other way of recovering it") }}</p>
+    <hr/>
+        <input type="email" placeholder="{{ _("Email") }}" name="email"/>
+        <p>{{ _("Do not enter an email if you are under the age of 13") }}</p>
+
+    <input type="hidden" name="nonce" value="{{ nonce }}"/>
+    <button type="submit">{{ _("Sign Up!") }}</button>
+</form>
+
+<h1>{{ _("Reset Passowrd") }}</h1>
+<form action="request_reset_password" method="POST">
+    <p>{{ _("Enter your email:") }}</p>
+    <input type="email" placeholder="{{ _("Email") }}" name="email"/>
+    <button type="submit">{{ _("Reset Password") }}</button>
+</form>
+{% endblock %}
+

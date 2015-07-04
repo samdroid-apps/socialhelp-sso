@@ -1,0 +1,8 @@
+socialhelpsso:
+  build: .
+  volumes:
+   - "/srv/socialhelp/sso-data:/data"
+  env_file:
+   - /srv/socialhelp/discourse-api-env.txt
+  ports:
+   - "5005:5000"
